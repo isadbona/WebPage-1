@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho | Bottle Up!</title>
+  <link rel="shortcut icon" type="image" href="images/icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <img src="images/logo.png" alt="logo" class="logo">
+
+  <div class="product-container">
+    <div class="product-box">
+      <img src="images/panda.png" alt="panda" class="panda">
+      <div class="dots-container">
+        <div class="dot pink-dot"></div>
+        <div class="dot blue-dot"></div>
+        <div class="dot purple-dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <h1>Checkout</h1>
+  <h2>Produto</h2>
+  <h3>Garrafa de água Ursos sem curso</h3>
+  <h4>Cor</h4>
+  <h5>Tamanho</h5>
+  <h6>Quantidade</h6>
+
+  <div class="preco">
+    <h1>Preço:</h1>
+    <h2 id="price">20 BRL</h2>
+  </div>
+
+  <div class="bar-container">
+    <div class="bar-dot"></div>
+  </div>
+
+  <div class="bottle-container">
+    <div class="bottle-size">500ml</div>
+    <input type="number" placeholder="" class="quantity-input" min="1">
+  </div>
+
+
+  <div class="client-info-box">
+    <div class="client-info-heading">
+      <h1>Dados Pessoais</h1>
+      <h2>Nome completo</h2>
+      <h3>E-mail</h3>
+      <h4>CPF</h4>
+    </div>
+    <div class="name-input-container">
+      <input type="text" id="name-input" class="name-input" placeholder="" required pattern="[A-Za-z\s]+" />
+    </div>
+    <div class="email-input-container">
+      <input type="email" id="email-input" class="email-input" required />
+    </div>
+    <div class="cpf-input-container">
+      <input type="text" id="cpf-input" class="cpf-input" placeholder="XXX.XXX.XXX-XX" maxlength="11" required
+        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" oninput="formatCPF(this)" onkeypress="return onlyDigits(event)" />
+
+      <div class="card-info-box">
+        <div class="card-info-heading">
+          <h1>Cartão de crédito</h1>
+          <h2>Número CVV</h2>
+          <h3>Bandeira</h3>
+          <h4>Validade</h4>
+        </div>
+        <div class="cvv-input-container">
+          <input type="text" id="cvv-code" class="cvv-code-input" placeholder="" maxlength="3" required>
+        </div>
+        <div class="card-type-container">
+          <select id="card-type">
+            <option value="mastercard">Mastercard</option>
+            <option value="visa">Visa</option>
+            <option value="elo">Elo</option>
+            <option value="amex">American Express</option>
+            <option value="hipercard">Hipercard</option>
+          </select>
+        </div>
+        <div class="card-date-container">
+          <input type="text" id="card-date" class="card-date-input" placeholder="XX/XX" maxlength="5" required>
+        </div>
+        <div class="button-container">
+          <button id="finalizar-button" onclick="validateForm()">Finalizar Compra</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
